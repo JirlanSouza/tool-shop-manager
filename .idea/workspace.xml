@@ -5,13 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0098b68e-a27f-4efc-8617-515b325538fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/Entity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/tool/Tool.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/tool/ToolType.java" afterDir="false" />
@@ -20,7 +13,10 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/services/tools/CreateToolDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/services/tools/ToolRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/services/tools/ToolTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/infra/database/repository/ToolInMemoryRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/entities/tool/ToolTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -39,16 +35,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JavaAutoRunManager">
-    <enabled-run-configurations>
-      <run-configuration type="JUnit" name="ToolTest.ShouldReturnNewToolInstanceWIthNotNullId" />
-    </enabled-run-configurations>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Ao1mbuPE4Gx0RBxRJ85gyfVMpx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,7 +56,8 @@
     "last_directory_selection": "/home/jirlan/dev/learning/tool-shop-manager/src/main/java/com/toolshopmanager/domain/entities",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -75,26 +69,55 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.toolshopmanager.infra.database.repository" />
       <recent name="com.toolshopmanager.domain.services" />
       <recent name="com.toolshopmanager.domain.entitys.tool" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.toolshopmanager.domain.services.tools" />
       <recent name="com.toolshopmanager.domain.entitys.tool" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.toolshopmanager.infra.database.repository" />
       <recent name="com.toolshopmanager.domain.services.tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ToolTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.Main" />
+  <component name="RunManager" selected="JUnit.All in tool-shop-manager">
+    <configuration name="All in tool-shop-manager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tool-shop-manager" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateToolTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tool-shop-manager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.toolshopmanager.*" />
+          <option name="PATTERN" value="com.toolshopmanager.domain.services.tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.services.tools" />
+      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.services.tools.CreateToolTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateToolTest.perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tool-shop-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.toolshopmanager.domain.services.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.services.tools" />
+      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.services.tools.CreateToolTest" />
+      <option name="METHOD_NAME" value="perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,22 +134,6 @@
       <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.entities.tool.ToolTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ToolTest.ShouldReturnNewToolInstanceWIthNotNullId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tool-shop-manager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.toolshopmanager.domain.entities.tool.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.entities.tool" />
-      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.entities.tool.ToolTest" />
-      <option name="METHOD_NAME" value="ShouldReturnNewToolInstanceWIthNotNullId" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,17 +155,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.ToolTest.ShouldReturnNewToolInstanceWIthNotNullId" />
+      <item itemvalue="JUnit.All in tool-shop-manager" />
+      <item itemvalue="JUnit.CreateToolTest" />
+      <item itemvalue="JUnit.CreateToolTest.perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" />
       <item itemvalue="JUnit.ToolTest.ShouldThrowIllegalArgumentExceptionWhenNameIsLessThan3Character" />
       <item itemvalue="JUnit.ToolTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in tool-shop-manager" />
+        <item itemvalue="JUnit.CreateToolTest" />
+        <item itemvalue="JUnit.CreateToolTest.perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" />
         <item itemvalue="JUnit.ToolTest.ShouldThrowIllegalArgumentExceptionWhenNameIsLessThan3Character" />
         <item itemvalue="JUnit.ToolTest" />
-        <item itemvalue="JUnit.ToolTest.ShouldReturnNewToolInstanceWIthNotNullId" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -179,12 +188,17 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
