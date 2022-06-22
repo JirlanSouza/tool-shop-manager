@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0098b68e-a27f-4efc-8617-515b325538fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/tool/Tool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/tool/ToolType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/services/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/services/tools/CreateTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/services/tools/CreateToolDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/services/tools/ToolRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/services/tools/ToolTypeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/infra/database/repository/ToolInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/entities/tool/ToolTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/services/tools/CreateToolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/services/tools/CreateToolTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,20 +36,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_directory_selection": "/home/jirlan/dev/learning/tool-shop-manager/src/main/java/com/toolshopmanager/domain/entities",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/jirlan/dev/learning/tool-shop-manager/src/main/java/com/toolshopmanager/domain/entities&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.toolshopmanager.domain.services.tools" />
@@ -106,6 +96,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CreateToolTest.mustHaveThePropertiesOfTheTypeEqualToPassedType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tool-shop-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.toolshopmanager.domain.services.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.services.tools" />
+      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.services.tools.CreateToolTest" />
+      <option name="METHOD_NAME" value="mustHaveThePropertiesOfTheTypeEqualToPassedType" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CreateToolTest.perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tool-shop-manager" />
       <extension name="coverage">
@@ -118,22 +124,6 @@
       <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.services.tools.CreateToolTest" />
       <option name="METHOD_NAME" value="perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ToolTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tool-shop-manager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.toolshopmanager.domain.entitys.tool.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.entities.tool" />
-      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.entities.tool.ToolTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,19 +145,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.CreateToolTest.mustHaveThePropertiesOfTheTypeEqualToPassedType" />
       <item itemvalue="JUnit.All in tool-shop-manager" />
       <item itemvalue="JUnit.CreateToolTest" />
       <item itemvalue="JUnit.CreateToolTest.perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" />
       <item itemvalue="JUnit.ToolTest.ShouldThrowIllegalArgumentExceptionWhenNameIsLessThan3Character" />
-      <item itemvalue="JUnit.ToolTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in tool-shop-manager" />
+        <item itemvalue="JUnit.CreateToolTest.mustHaveThePropertiesOfTheTypeEqualToPassedType" />
         <item itemvalue="JUnit.CreateToolTest" />
         <item itemvalue="JUnit.CreateToolTest.perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" />
         <item itemvalue="JUnit.ToolTest.ShouldThrowIllegalArgumentExceptionWhenNameIsLessThan3Character" />
-        <item itemvalue="JUnit.ToolTest" />
       </list>
     </recent_temporary>
   </component>
@@ -211,6 +201,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tool_shop_manager$All_in_tool_shop_manager.ic" NAME="All in tool-shop-manager Coverage Results" MODIFIED="1655934058692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/tool_shop_manager$ToolTest.ic" NAME="ToolTest Coverage Results" MODIFIED="1655680673005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.toolshopmanager.domain.entitys.tool.*</FILTER>
     </SUITE>

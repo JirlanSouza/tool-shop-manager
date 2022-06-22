@@ -1,11 +1,14 @@
 package com.toolshopmanager.domain.services.tools;
 
+import com.toolshopmanager.domain.entities.tool.Tool;
+import com.toolshopmanager.domain.entities.tool.ToolType;
 import com.toolshopmanager.infra.database.repository.TooTypeInMemoryRepository;
 import com.toolshopmanager.infra.database.repository.ToolInMemoryRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.UUID;
 
 class CreateToolTest {
@@ -19,10 +22,27 @@ class CreateToolTest {
     }
 
     @Test
-    void perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist() {
-        CreateTool createTool = new CreateTool(this.toolRepository, toolTypeRepository);
+    void shouldThrowIllegalArgumentExceptionWhenTypeNotExist() {
         CreateToolDTO createToolDTO = new CreateToolDTO("Lixadeira", UUID.randomUUID().toString());
-
+        CreateTool createTool = this.makeCreateTool();
         Assertions.assertThrows(IllegalArgumentException.class, () -> {createTool.perform(createToolDTO);});
     }
+
+    @Test
+    void mustHaveThePropertiesOfTheTypeEqualToPassedType() {
+        ToolType tooltype = new ToolType("Eletrica");
+        this.toolTypeRepository.save(tooltype);
+        CreateToolDTO createToolDTO = new CreateToolDTO("Lixadeira", tooltype.getId().toString());
+        CreateTool createTool = this.makeCreateTool();
+        createTool.perform(createToolDTO);
+        List<Tool> createdTool = this.toolRepository.findAll();
+
+        Assertions.assertEquals(tooltype, createdTool.get(0).getType());
+    }
+
+    private CreateTool makeCreateTool() {
+        return new CreateTool(this.toolRepository, this.toolTypeRepository);
+    }
+
+
 }
