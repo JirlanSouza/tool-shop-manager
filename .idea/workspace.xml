@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0098b68e-a27f-4efc-8617-515b325538fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/services/tools/CreateToolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/services/tools/CreateToolTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.toolshopmanager.domain.services.tools.dtos" />
       <recent name="com.toolshopmanager.domain.services.tools" />
       <recent name="com.toolshopmanager.domain.entitys.tool" />
     </key>
@@ -72,7 +72,7 @@
       <recent name="com.toolshopmanager.domain.services.tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in tool-shop-manager">
+  <component name="RunManager" selected="JUnit.UpdateToolTest.ExpectTheNameOfToolToBeTheSameAsTheOnePassed">
     <configuration name="All in tool-shop-manager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tool-shop-manager" />
       <option name="PACKAGE_NAME" value="" />
@@ -128,28 +128,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ToolTest.ShouldThrowIllegalArgumentExceptionWhenNameIsLessThan3Character" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UpdateToolTest.ExpectTheNameOfToolToBeTheSameAsTheOnePassed" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="tool-shop-manager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.toolshopmanager.domain.entitys.tool.*" />
+          <option name="PATTERN" value="com.toolshopmanager.domain.services.tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.entities.tool" />
-      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.entities.tool.ToolTest" />
-      <option name="METHOD_NAME" value="ShouldThrowIllegalArgumentExceptionWhenNameIsLessThan3Character" />
+      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.services.tools" />
+      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.services.tools.UpdateToolTest" />
+      <option name="METHOD_NAME" value="ExpectTheNameOfToolToBeTheSameAsTheOnePassed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.UpdateToolTest.ExpectTheNameOfToolToBeTheSameAsTheOnePassed" />
       <item itemvalue="JUnit.CreateToolTest.mustHaveThePropertiesOfTheTypeEqualToPassedType" />
       <item itemvalue="JUnit.All in tool-shop-manager" />
       <item itemvalue="JUnit.CreateToolTest" />
       <item itemvalue="JUnit.CreateToolTest.perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" />
-      <item itemvalue="JUnit.ToolTest.ShouldThrowIllegalArgumentExceptionWhenNameIsLessThan3Character" />
     </list>
     <recent_temporary>
       <list>
@@ -157,7 +157,6 @@
         <item itemvalue="JUnit.CreateToolTest.mustHaveThePropertiesOfTheTypeEqualToPassedType" />
         <item itemvalue="JUnit.CreateToolTest" />
         <item itemvalue="JUnit.CreateToolTest.perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" />
-        <item itemvalue="JUnit.ToolTest.ShouldThrowIllegalArgumentExceptionWhenNameIsLessThan3Character" />
       </list>
     </recent_temporary>
   </component>
