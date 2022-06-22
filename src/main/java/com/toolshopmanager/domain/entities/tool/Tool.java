@@ -25,6 +25,11 @@ public class Tool extends Entity {
         return new Tool(validName, type);
     }
 
+    public static Tool create(UUID id, String name, ToolType type) throws IllegalArgumentException {
+        String validName = Tool.validateName(name);
+        return new Tool(id, validName, type);
+    }
+
     private static String validateName(String name) throws IllegalArgumentException {
         String trimmedName = name.trim();
         if (trimmedName.length() < 3) {
