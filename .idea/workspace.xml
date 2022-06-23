@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0098b68e-a27f-4efc-8617-515b325538fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/services/tools/UpdateToolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/services/tools/UpdateToolTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +72,7 @@
       <recent name="com.toolshopmanager.domain.services.tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UpdateToolTest.ExpectTheNameOfToolToBeTheSameAsTheOnePassed">
+  <component name="RunManager" selected="JUnit.UpdateToolTest.ShouldThrowIllegalArgumentExceptionWhenTypeIdIsInvalid">
     <configuration name="All in tool-shop-manager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tool-shop-manager" />
       <option name="PACKAGE_NAME" value="" />
@@ -145,15 +144,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UpdateToolTest.ShouldThrowIllegalArgumentExceptionWhenTypeIdIsInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tool-shop-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.toolshopmanager.domain.services.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.services.tools" />
+      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.services.tools.UpdateToolTest" />
+      <option name="METHOD_NAME" value="ShouldThrowIllegalArgumentExceptionWhenTypeIdIsInvalid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.UpdateToolTest.ExpectTheNameOfToolToBeTheSameAsTheOnePassed" />
       <item itemvalue="JUnit.CreateToolTest.mustHaveThePropertiesOfTheTypeEqualToPassedType" />
+      <item itemvalue="JUnit.UpdateToolTest.ShouldThrowIllegalArgumentExceptionWhenTypeIdIsInvalid" />
       <item itemvalue="JUnit.All in tool-shop-manager" />
       <item itemvalue="JUnit.CreateToolTest" />
       <item itemvalue="JUnit.CreateToolTest.perform_ShouldThrowIllegalArgumentExceptionWhenTypeNotExist" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UpdateToolTest.ShouldThrowIllegalArgumentExceptionWhenTypeIdIsInvalid" />
         <item itemvalue="JUnit.All in tool-shop-manager" />
         <item itemvalue="JUnit.CreateToolTest.mustHaveThePropertiesOfTheTypeEqualToPassedType" />
         <item itemvalue="JUnit.CreateToolTest" />

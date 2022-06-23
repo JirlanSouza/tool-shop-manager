@@ -46,4 +46,11 @@ public class UpdateToolTest {
         Assertions.assertEquals(updateToolDTO.getTypeId(), updatedTool.get().getType().getId().toString());
 
     }
+
+    @Test
+    void ShouldThrowIllegalArgumentExceptionWhenTypeIdIsInvalid() {
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO(UUID.randomUUID().toString(), "Lixadeira", "invalid-UUID");
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));
+    }
 }
