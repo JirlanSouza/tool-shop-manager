@@ -9,9 +9,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Array;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public class UpdateToolTest {
+    private UpdateTool updateTool;
     private ToolRepository toolRepository;
     private ToolTypeRepository toolTypeRepository;
 
@@ -19,24 +24,26 @@ public class UpdateToolTest {
     void setUp() {
         this.toolRepository = new ToolInMemoryRepository();
         this.toolTypeRepository = new TooTypeInMemoryRepository();
+        this.updateTool = new UpdateTool(this.toolRepository, this.toolTypeRepository);
     }
 
     @Test
-    void ExpectTheNameOfToolToBeTheSameAsTheOnePassed() {
-        UpdateTool updateTool = new UpdateTool(this.toolRepository, this.toolTypeRepository);
-        ToolType mechanicalToolType = new ToolType("Mecânica");
-        ToolType electricalToolType = new ToolType("Mecânica");
-        Tool tool = Tool.create("Alavanca", mechanicalToolType);
-        UpdateToolDTO updateToolDTO = new UpdateToolDTO(tool.getId().toString(),"Lixadeira", electricalToolType.getId().toString());
+    void ExpectTheNameAndTypeIdOfToolToBeTheSameAsTheOnePassed() {
+        ToolType oldToolType = new ToolType("Mecânica");
+        ToolType newToolType = new ToolType("Mecânica");
 
-        this.toolTypeRepository.save(mechanicalToolType);
-        this.toolTypeRepository.save(electricalToolType);
+        Tool tool = Tool.create("Alavanca", oldToolType);
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO(tool.getId().toString(),"Lixadeira", oldToolType.getId().toString());
+
+        this.toolTypeRepository.save(oldToolType);
+        this.toolTypeRepository.save(newToolType);
         this.toolRepository.save(tool);
-        updateTool.perform(updateToolDTO);
+        this.updateTool.perform(updateToolDTO);
 
         Optional<Tool> updatedTool = this.toolRepository.findById(tool.getId());
 
         Assertions.assertEquals(updateToolDTO.getName(), updatedTool.get().getName());
+        Assertions.assertEquals(updateToolDTO.getTypeId(), updatedTool.get().getType().getId().toString());
 
     }
 }
