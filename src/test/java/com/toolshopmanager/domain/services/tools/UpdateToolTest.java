@@ -53,4 +53,11 @@ public class UpdateToolTest {
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));
     }
+
+    @Test
+    void ShouldThrowIllegalArgumentExceptionWhenToolTypeNotExist() {
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO(UUID.randomUUID().toString(), "Lixadeira", UUID.randomUUID().toString());
+        String toolTypeNotExistMessageError = "Type is not exist";
+        Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));
+    }
 }

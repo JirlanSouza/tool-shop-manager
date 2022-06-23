@@ -22,6 +22,11 @@ public class UpdateTool {
         Optional<Tool> tool = this.toolRepository.findById(toolId);
         Optional<ToolType> toolType = this.toolTypeRepository.findById(toolTypeId);
 
+        if (toolType.isEmpty()) {
+            throw new IllegalArgumentException("Type is not exist");
+        }
+
+
         Tool updatedTool = Tool.create(toolId, toolData.getName(), toolType.get());
         this.toolRepository.update(toolId, updatedTool);
     }
