@@ -5,7 +5,7 @@ import java.util.UUID;
 public abstract class Entity {
     private final UUID id;
 
-     public Entity(UUID id) {
+    public Entity(UUID id) {
         this.id = id;
     }
 

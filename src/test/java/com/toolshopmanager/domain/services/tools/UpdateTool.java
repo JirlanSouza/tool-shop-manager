@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class UpdateTool {
     private final ToolRepository toolRepository;
-    private  final ToolTypeRepository toolTypeRepository;
+    private final ToolTypeRepository toolTypeRepository;
 
     public UpdateTool(ToolRepository toolRepository, ToolTypeRepository toolTypeRepository) {
         this.toolRepository = toolRepository;
@@ -17,8 +17,8 @@ public class UpdateTool {
     }
 
     public void perform(UpdateToolDTO toolData) {
-        UUID toolId = UUID.fromString(toolData.getId());
-        UUID toolTypeId = UUID.fromString(toolData.getTypeId());
+        UUID toolId = UUID.fromString(toolData.id());
+        UUID toolTypeId = UUID.fromString(toolData.typeId());
         Optional<Tool> tool = this.toolRepository.findById(toolId);
         Optional<ToolType> toolType = this.toolTypeRepository.findById(toolTypeId);
 
@@ -27,7 +27,7 @@ public class UpdateTool {
         }
 
 
-        Tool updatedTool = Tool.create(toolId, toolData.getName(), toolType.get());
+        Tool updatedTool = Tool.create(toolId, toolData.name(), toolType.get());
         this.toolRepository.update(toolId, updatedTool);
     }
 }

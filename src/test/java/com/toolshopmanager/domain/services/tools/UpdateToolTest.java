@@ -30,7 +30,11 @@ public class UpdateToolTest {
         ToolType newToolType = ToolType.create("Mecânica");
 
         Tool tool = Tool.create("Alavanca", oldToolType);
-        UpdateToolDTO updateToolDTO = new UpdateToolDTO(tool.getId().toString(),"Lixadeira", oldToolType.getId().toString());
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO(
+            tool.getId().toString(),
+            "Lixadeira",
+            oldToolType.getId().toString()
+        );
 
         this.toolTypeRepository.save(oldToolType);
         this.toolTypeRepository.save(newToolType);
@@ -39,28 +43,40 @@ public class UpdateToolTest {
 
         Optional<Tool> updatedTool = this.toolRepository.findById(tool.getId());
 
-        Assertions.assertEquals(updateToolDTO.getName(), updatedTool.get().getName());
-        Assertions.assertEquals(updateToolDTO.getTypeId(), updatedTool.get().getType().getId().toString());
+        Assertions.assertEquals(updateToolDTO.name(), updatedTool.get().getName());
+        Assertions.assertEquals(updateToolDTO.typeId(), updatedTool.get().getType().getId().toString());
 
     }
 
     @Test
     void ShouldThrowIllegalArgumentExceptionWhenTypeIdIsInvalid() {
-        UpdateToolDTO updateToolDTO = new UpdateToolDTO(UUID.randomUUID().toString(), "Lixadeira", "invalid-UUID");
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO(
+            UUID.randomUUID().toString(),
+            "Lixadeira",
+            "invalid-UUID"
+        );
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));
     }
 
     @Test
     void ShouldThrowIllegalArgumentExceptionWhenToolTypeNotExist() {
-        UpdateToolDTO updateToolDTO = new UpdateToolDTO(UUID.randomUUID().toString(), "Lixadeira", UUID.randomUUID().toString());
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO(
+            UUID.randomUUID().toString(),
+            "Lixadeira",
+            UUID.randomUUID().toString()
+        );
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));
     }
 
     @Test
     void ShouldThrowIllegalArgumentExceptionWhenIdIsInvalid() {
-        UpdateToolDTO updateToolDTO = new UpdateToolDTO("invalid-UUID" , "Lixadeira", UUID.randomUUID().toString());
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO(
+            "invalid-UUID",
+            "Lixadeira",
+            UUID.randomUUID().toString()
+        );
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));
     }
@@ -68,7 +84,12 @@ public class UpdateToolTest {
     @Test
     void ShouldThrowIllegalArgumentExceptionWhenToolNotExist() {
         ToolType toolType = ToolType.create("Elétrica");
-        UpdateToolDTO updateToolDTO = new UpdateToolDTO(UUID.randomUUID().toString(), "Lixadeira", toolType.getId().toString());
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO(
+            UUID.randomUUID().toString(),
+            "Lixadeira",
+            toolType.getId().toString()
+        );
+
         this.toolTypeRepository.save(toolType);
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));

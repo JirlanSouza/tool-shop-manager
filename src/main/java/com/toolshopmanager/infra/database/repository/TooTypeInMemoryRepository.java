@@ -23,7 +23,7 @@ public class TooTypeInMemoryRepository implements ToolTypeRepository {
 
     @Override
     public Optional<ToolType> findById(UUID id) {
-         return toolTypes.stream().filter(tool -> tool.getId().equals(id)).findFirst();
+        return toolTypes.stream().filter(tool -> tool.getId().equals(id)).findFirst();
     }
 
     @Override

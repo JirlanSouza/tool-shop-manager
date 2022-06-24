@@ -22,7 +22,7 @@ public class ToolInMemoryRepository implements ToolRepository {
 
     @Override
     public Optional<Tool> findById(UUID id) {
-         return tools.stream().filter(tool -> tool.getId().equals(id)).findFirst();
+        return tools.stream().filter(tool -> tool.getId().equals(id)).findFirst();
     }
 
     @Override

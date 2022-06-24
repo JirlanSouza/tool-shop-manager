@@ -2,6 +2,7 @@ package com.toolshopmanager.domain.services.tools;
 
 import com.toolshopmanager.domain.entities.tool.Tool;
 import com.toolshopmanager.domain.entities.tool.ToolType;
+import com.toolshopmanager.domain.services.tools.dtos.CreateToolDTO;
 import com.toolshopmanager.infra.database.repository.TooTypeInMemoryRepository;
 import com.toolshopmanager.infra.database.repository.ToolInMemoryRepository;
 import org.junit.jupiter.api.Assertions;
@@ -25,7 +26,7 @@ class CreateToolTest {
     void shouldThrowIllegalArgumentExceptionWhenTypeNotExist() {
         CreateToolDTO createToolDTO = new CreateToolDTO("Lixadeira", UUID.randomUUID().toString());
         CreateTool createTool = this.makeCreateTool();
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {createTool.perform(createToolDTO);});
+        Assertions.assertThrows(IllegalArgumentException.class, () -> createTool.perform(createToolDTO));
     }
 
     @Test

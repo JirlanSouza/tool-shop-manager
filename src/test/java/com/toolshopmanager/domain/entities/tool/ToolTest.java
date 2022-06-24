@@ -24,7 +24,7 @@ class ToolTest {
     @Test
     public void ShouldHaveEqualsIdToPassedID() {
         UUID id = UUID.randomUUID();
-        Tool tool = Tool.create(id,"Lixadeira", this.toolType);
+        Tool tool = Tool.create(id, "Lixadeira", this.toolType);
 
         Assertions.assertEquals(id, tool.getId());
     }
