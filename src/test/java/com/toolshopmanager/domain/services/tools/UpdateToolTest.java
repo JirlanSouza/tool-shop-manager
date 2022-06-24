@@ -9,9 +9,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Array;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -29,8 +26,8 @@ public class UpdateToolTest {
 
     @Test
     void ExpectTheNameAndTypeIdOfToolToBeTheSameAsTheOnePassed() {
-        ToolType oldToolType = new ToolType("Mecânica");
-        ToolType newToolType = new ToolType("Mecânica");
+        ToolType oldToolType = ToolType.create("Mecânica");
+        ToolType newToolType = ToolType.create("Mecânica");
 
         Tool tool = Tool.create("Alavanca", oldToolType);
         UpdateToolDTO updateToolDTO = new UpdateToolDTO(tool.getId().toString(),"Lixadeira", oldToolType.getId().toString());
@@ -57,7 +54,23 @@ public class UpdateToolTest {
     @Test
     void ShouldThrowIllegalArgumentExceptionWhenToolTypeNotExist() {
         UpdateToolDTO updateToolDTO = new UpdateToolDTO(UUID.randomUUID().toString(), "Lixadeira", UUID.randomUUID().toString());
-        String toolTypeNotExistMessageError = "Type is not exist";
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));
+    }
+
+    @Test
+    void ShouldThrowIllegalArgumentExceptionWhenIdIsInvalid() {
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO("invalid-UUID" , "Lixadeira", UUID.randomUUID().toString());
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));
+    }
+
+    @Test
+    void ShouldThrowIllegalArgumentExceptionWhenToolNotExist() {
+        ToolType toolType = ToolType.create("Elétrica");
+        UpdateToolDTO updateToolDTO = new UpdateToolDTO(UUID.randomUUID().toString(), "Lixadeira", toolType.getId().toString());
+        this.toolTypeRepository.save(toolType);
+
         Assertions.assertThrows(IllegalArgumentException.class, () -> this.updateTool.perform(updateToolDTO));
     }
 }

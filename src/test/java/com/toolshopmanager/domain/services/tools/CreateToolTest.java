@@ -30,7 +30,7 @@ class CreateToolTest {
 
     @Test
     void mustHaveThePropertiesOfTheTypeEqualToPassedType() {
-        ToolType tooltype = new ToolType("Eletrica");
+        ToolType tooltype = ToolType.create("Eletrica");
         this.toolTypeRepository.save(tooltype);
         CreateToolDTO createToolDTO = new CreateToolDTO("Lixadeira", tooltype.getId().toString());
         CreateTool createTool = this.makeCreateTool();
