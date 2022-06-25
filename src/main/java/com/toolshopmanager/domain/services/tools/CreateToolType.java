@@ -4,7 +4,7 @@ import com.toolshopmanager.domain.entities.tool.ToolType;
 import com.toolshopmanager.domain.services.tools.dtos.CreateToolTypeDTO;
 
 public class CreateToolType {
-    private ToolTypeRepository toolTypeRepository;
+    private final ToolTypeRepository toolTypeRepository;
 
     public CreateToolType(ToolTypeRepository toolTypeRepository) {
         this.toolTypeRepository = toolTypeRepository;
