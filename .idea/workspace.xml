@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0098b68e-a27f-4efc-8617-515b325538fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/services/tools/DeleteToolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/services/tools/DeleteToolTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,7 @@
       <recent name="com.toolshopmanager.infra.database.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DeleteToolTypeTest">
+  <component name="RunManager" selected="JUnit.DeleteToolTest">
     <configuration name="All in tool-shop-manager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tool-shop-manager" />
       <option name="PACKAGE_NAME" value="" />
@@ -171,10 +171,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DeleteToolTest" />
         <item itemvalue="JUnit.DeleteToolTypeTest" />
         <item itemvalue="JUnit.UpdateToolTypeTest" />
         <item itemvalue="JUnit.CreateToolTypeTest" />
-        <item itemvalue="JUnit.DeleteToolTest" />
         <item itemvalue="JUnit.All in tool-shop-manager" />
       </list>
     </recent_temporary>
