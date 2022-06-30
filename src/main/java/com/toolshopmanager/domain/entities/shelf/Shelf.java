@@ -2,18 +2,19 @@ package com.toolshopmanager.domain.entities.shelf;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Shelf {
     private String name;
-    private List<Partition> partitions;
+    private final List<Partition> partitions;
 
-    private Shelf(String name, short patitionsQuantity) {
+    private Shelf(String name, short partitionsQuantity) {
         this.name = name;
         this.partitions = new ArrayList<Partition>();
 
-        for (short i = 1; i <= patitionsQuantity; i++) {
+        for (short i = 1; i <= partitionsQuantity; i++) {
             this.partitions.add(new Partition(i));
         }
     }
@@ -40,5 +41,17 @@ public class Shelf {
 
     public List<Partition> getPartitions() {
         return partitions;
+    }
+
+    public void addItemToPartition(short partitionCode, UUID itemId) {
+        this.partitions.get(partitionCode).addItem(itemId);
+    }
+
+    public void addManyItemsToPartition(short partitionCode, UUID[] itemsId) {
+        this.partitions.get(partitionCode).addManyItems(itemsId);
+    }
+
+    public List<UUID> getPartitionItems(short partitionCode) {
+        return this.partitions.get(partitionCode).getItems();
     }
 }

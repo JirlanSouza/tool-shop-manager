@@ -3,6 +3,8 @@ package com.toolshopmanager.domain.entities.shelf;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 class ShelfTest {
     @Test
     void ShouldThrowIllegalArgumentExceptionWhenNameContainsDigit() {
@@ -50,6 +52,36 @@ class ShelfTest {
         short partitionsQuantity = 5;
         Shelf shelf = Shelf.create("A", partitionsQuantity);
 
-        Assertions.assertEquals(partitionsQuantity, shelf.getPartitions().stream().count());
+        Assertions.assertEquals(partitionsQuantity, shelf.getPartitions().size());
+    }
+
+    @Test
+    void ShouldAddItemInShelfPartition() {
+        short partitionsQuantity = 5;
+        Shelf shelf = Shelf.create("A", partitionsQuantity);
+        short partitionCode = 1;
+        UUID itemId = UUID.randomUUID();
+
+        shelf.addItemToPartition(partitionCode, itemId);
+
+        Assertions.assertEquals(itemId, shelf.getPartitionItems(partitionCode).get(0));
+    }
+
+    @Test
+    void ShouldAddManyItemsInShelfPartition() {
+        short partitionsQuantity = 5;
+        Shelf shelf = Shelf.create("A", partitionsQuantity);
+        short partitionCode = 1;
+        UUID[] itemsId = new UUID[5];
+
+        for (int i = 0; i < itemsId.length; i++) {
+            itemsId[i] = UUID.randomUUID();
+        }
+
+        shelf.addManyItemsToPartition(partitionCode, itemsId);
+
+        for (int i = 0; i < itemsId.length; i++) {
+            Assertions.assertEquals(itemsId[i], shelf.getPartitionItems(partitionCode).get(i));
+        }
     }
 }
