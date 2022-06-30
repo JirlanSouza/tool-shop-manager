@@ -7,7 +7,7 @@ class ShelfTest {
     @Test
     void ShouldThrowIllegalArgumentExceptionWhenNameContainsDigit() {
         String nameWithDigit = "A1";
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithDigit));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithDigit, (short) 1));
     }
 
     @Test
@@ -21,25 +21,35 @@ class ShelfTest {
         String nameWithEspecialCharacterSeven = "A¨";
         String nameWithEspecialCharacterEight = "A&";
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterOne));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterTwo));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterThree));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterFour));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterFive));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterSix));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterSeven));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterEight));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterOne, (short) 1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterTwo, (short) 1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterThree, (short) 1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterFour, (short) 1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterFive, (short) 1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterSix, (short) 1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterSeven, (short) 1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameWithEspecialCharacterEight, (short) 1));
     }
 
     @Test
     void ShouldThrowIllegalArgumentExceptionWhenNameExceedThreeCharacter() {
         String nameExceededThreeCharacter = "ABDB";
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameExceededThreeCharacter));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Shelf.create(nameExceededThreeCharacter, (short) 1));
     }
 
     @Test
     void ShouldCreateShelfWithValidName() {
         String validName = "A";
-        Shelf shelf = Shelf.create(validName);
+        Shelf shelf = Shelf.create(validName, (short) 1);
+
+        Assertions.assertEquals(validName, shelf.getName());
+    }
+
+    @Test
+    void ShouldCreateShelfWithQuantityPartitions() {
+        short partitionsQuantity = 5;
+        Shelf shelf = Shelf.create("A", partitionsQuantity);
+
+        Assertions.assertEquals(partitionsQuantity, shelf.getPartitions().stream().count());
     }
 }

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class Parttion {
+public class Partition {
     private short code;
     private List<UUID> itens;
 
-    public Parttion(short code) {
+    public Partition(short code) {
         this.code = code;
         this.itens = new ArrayList<UUID>();
     }

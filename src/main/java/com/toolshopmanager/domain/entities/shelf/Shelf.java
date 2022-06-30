@@ -7,16 +7,20 @@ import java.util.regex.Pattern;
 
 public class Shelf {
     private String name;
-    private List<Parttion> parttions;
+    private List<Partition> partitions;
 
-    private Shelf(String name) {
+    private Shelf(String name, short patitionsQuantity) {
         this.name = name;
-        this.parttions = new ArrayList<Parttion>();
+        this.partitions = new ArrayList<Partition>();
+
+        for (short i = 1; i <= patitionsQuantity; i++) {
+            this.partitions.add(new Partition(i));
+        }
     }
 
-    public static Shelf create(String name) {
+    public static Shelf create(String name, short partitionsQuantity) {
         String validName = Shelf.validateName(name);
-        return new Shelf(validName);
+        return new Shelf(validName, partitionsQuantity);
     }
 
     private static String validateName(String name) {
@@ -27,6 +31,14 @@ public class Shelf {
             throw new IllegalArgumentException("Name is invalid");
         }
 
-        return matcher.toString();
+        return matcher.group();
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public List<Partition> getPartitions() {
+        return partitions;
     }
 }

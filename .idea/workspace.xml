@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0098b68e-a27f-4efc-8617-515b325538fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/shelf/Parttion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/shelf/Partition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/shelf/Shelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/shelf/Shelf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/entities/shelf/ShelfTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/entities/shelf/ShelfTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
