@@ -84,4 +84,17 @@ class ShelfTest {
             Assertions.assertEquals(itemsId[i], shelf.getPartitionItems(partitionCode).get(i));
         }
     }
+
+    @Test
+    void ShouldRemoveItemOfShelfPartition() {
+        short partitionsQuantity = 5;
+        Shelf shelf = Shelf.create("A", partitionsQuantity);
+        short partitionCode = 1;
+        UUID itemId = UUID.randomUUID();
+        shelf.addItemToPartition(partitionCode, itemId);
+
+        shelf.RemoveItemOfPartition(partitionCode, itemId);
+
+        Assertions.assertEquals(0, shelf.getPartitionItems(partitionCode).size());
+    }
 }

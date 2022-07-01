@@ -54,4 +54,8 @@ public class Shelf {
     public List<UUID> getPartitionItems(short partitionCode) {
         return this.partitions.get(partitionCode).getItems();
     }
+
+    public void RemoveItemOfPartition(short partitionCode, UUID itemId) {
+        this.partitions.get(partitionCode).removeItem(itemId);
+    }
 }
