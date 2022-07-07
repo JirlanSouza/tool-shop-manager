@@ -58,4 +58,12 @@ public class Shelf {
     public void RemoveItemOfPartition(short partitionCode, UUID itemId) {
         this.partitions.get(partitionCode).removeItem(itemId);
     }
+
+    public PartitionItem getPartitionItem(short partitionCode, UUID itemId) {
+        return this.partitions.get(partitionCode).getItem(itemId);
+    }
+
+    public void borrowItem(short partitionCode, UUID itemId) {
+        this.partitions.get(partitionCode).setUnavailableItem(itemId);
+    }
 }

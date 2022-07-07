@@ -8,7 +8,7 @@ public class PartitionItem {
 
     public PartitionItem(UUID itemId) {
         this.itemId = itemId;
-        this.status = PartitionItemStatus.UNAVAILABLE;
+        this.status = PartitionItemStatus.AVAILABLE;
     }
 
     public UUID getItemId() {
@@ -17,5 +17,9 @@ public class PartitionItem {
 
     public PartitionItemStatus getStatus() {
         return status;
+    }
+
+    public void setStatus(PartitionItemStatus status) {
+        this.status = status;
     }
 }

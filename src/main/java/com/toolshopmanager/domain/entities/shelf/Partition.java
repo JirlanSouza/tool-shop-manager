@@ -23,6 +23,18 @@ public class Partition {
         return this.items;
     }
 
+    public PartitionItem getItem(UUID itemId) {
+        Optional<PartitionItem> foundItem = this.items.stream().filter(
+            item -> item.getItemId().equals(itemId)
+        ).findFirst();
+
+        if (foundItem.isEmpty()) {
+            throw new IllegalArgumentException("Item does not exist in the partition");
+        }
+
+        return foundItem.get();
+    }
+
     public void removeItem(UUID itemId) {
         Optional<PartitionItem> item = this.items.stream().filter(
             currentItem -> currentItem.getItemId().equals(itemId)
@@ -33,5 +45,10 @@ public class Partition {
         }
 
         this.items.remove(item.get());
+    }
+
+    public void setUnavailableItem(UUID itemId) {
+         PartitionItem item = this.getItem(itemId);
+         item.setStatus(PartitionItemStatus.UNAVAILABLE);
     }
 }

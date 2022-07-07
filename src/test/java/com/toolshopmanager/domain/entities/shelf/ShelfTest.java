@@ -49,29 +49,39 @@ class ShelfTest {
 
     @Test
     void ShouldCreateShelfWithQuantityPartitions() {
-        short partitionsQuantity = 5;
-        Shelf shelf = Shelf.create("A", partitionsQuantity);
+        Shelf shelf = this.createShelfWithFivePartitions();
 
-        Assertions.assertEquals(partitionsQuantity, shelf.getPartitions().size());
+        Assertions.assertEquals(5, shelf.getPartitions().size());
     }
 
     @Test
     void ShouldAddItemInShelfPartition() {
-        short partitionsQuantity = 5;
-        Shelf shelf = Shelf.create("A", partitionsQuantity);
+        Shelf shelf = this.createShelfWithFivePartitions();
         short partitionCode = 1;
         UUID itemId = UUID.randomUUID();
 
         shelf.addItemToPartition(partitionCode, itemId);
 
-        UUID addedItemId = shelf.getPartitionItems(partitionCode).get(0).getItemId();
+        UUID addedItemId = shelf.getPartitionItem(partitionCode, itemId).getItemId();
         Assertions.assertEquals(itemId, addedItemId);
     }
 
     @Test
+    void ShouldBeAvailableTheAddedItem() {
+        Shelf shelf = this.createShelfWithFivePartitions();
+        short partitionCode = 1;
+        UUID itemId = UUID.randomUUID();
+
+        shelf.addItemToPartition(partitionCode, itemId);
+
+        PartitionItemStatus addedPartitionItemStatus = shelf.getPartitionItem(partitionCode, itemId).getStatus();
+        Assertions.assertEquals(PartitionItemStatus.AVAILABLE, addedPartitionItemStatus);
+    }
+
+    @Test
     void ShouldAddManyItemsInShelfPartition() {
-        short partitionsQuantity = 5;
-        Shelf shelf = Shelf.create("A", partitionsQuantity);
+
+        Shelf shelf = this.createShelfWithFivePartitions();
         short partitionCode = 1;
         UUID[] itemsId = new UUID[5];
 
@@ -89,8 +99,7 @@ class ShelfTest {
 
     @Test
     void ShouldRemoveItemOfShelfPartition() {
-        short partitionsQuantity = 5;
-        Shelf shelf = Shelf.create("A", partitionsQuantity);
+        Shelf shelf = this.createShelfWithFivePartitions();
         short partitionCode = 1;
         UUID itemId = UUID.randomUUID();
         shelf.addItemToPartition(partitionCode, itemId);
@@ -98,5 +107,23 @@ class ShelfTest {
         shelf.RemoveItemOfPartition(partitionCode, itemId);
 
         Assertions.assertEquals(0, shelf.getPartitionItems(partitionCode).size());
+    }
+
+    @Test
+    void ShouldBeAnUnavailableItemWhenTheItemIsBorrowed() {
+        UUID itemId = UUID.randomUUID();
+        Shelf shelf = this.createShelfWithFivePartitions();
+        short partitionCode = 1;
+        shelf.addItemToPartition(partitionCode, itemId);
+
+        shelf.borrowItem(partitionCode, itemId);
+
+        PartitionItemStatus borrowedPartitionItemStatus = shelf.getPartitionItem(partitionCode, itemId).getStatus();
+
+        Assertions.assertEquals(PartitionItemStatus.UNAVAILABLE, borrowedPartitionItemStatus);
+    }
+
+    private Shelf createShelfWithFivePartitions() {
+        return Shelf.create("A", (short) 5);
     }
 }
