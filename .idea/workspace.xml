@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0098b68e-a27f-4efc-8617-515b325538fe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/shelf/Partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/shelf/Partition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/shelf/Shelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolshopmanager/domain/entities/shelf/Shelf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/entities/shelf/ShelfTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/toolshopmanager/domain/entities/shelf/ShelfTest.java" afterDir="false" />
@@ -19,8 +20,9 @@
       <list>
         <option value="Interface" />
         <option value="Record" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -79,7 +81,7 @@
       <recent name="com.toolshopmanager.infra.database.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in tool-shop-manager">
+  <component name="RunManager" selected="JUnit.ShelfTest">
     <configuration name="All in tool-shop-manager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tool-shop-manager" />
       <option name="PACKAGE_NAME" value="" />
@@ -133,6 +135,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShelfTest.ShouldAddItemInShelfPartition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tool-shop-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.toolshopmanager.domain.entities.shelf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.entities.shelf" />
+      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.entities.shelf.ShelfTest" />
+      <option name="METHOD_NAME" value="ShouldAddItemInShelfPartition" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UpdateToolTest.ExpectTheNameOfToolToBeTheSameAsTheOnePassed" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="tool-shop-manager" />
       <extension name="coverage">
@@ -149,36 +167,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UpdateToolTypeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tool-shop-manager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.toolshopmanager.domain.services.tools.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.toolshopmanager.domain.services.tools" />
-      <option name="MAIN_CLASS_NAME" value="com.toolshopmanager.domain.services.tools.UpdateToolTypeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.UpdateToolTest.ExpectTheNameOfToolToBeTheSameAsTheOnePassed" />
+      <item itemvalue="JUnit.ShelfTest.ShouldAddItemInShelfPartition" />
       <item itemvalue="JUnit.All in tool-shop-manager" />
       <item itemvalue="JUnit.ShelfTest" />
       <item itemvalue="JUnit.DeleteToolTypeTest" />
-      <item itemvalue="JUnit.UpdateToolTypeTest" />
       <item itemvalue="JUnit.DeleteToolTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in tool-shop-manager" />
         <item itemvalue="JUnit.ShelfTest" />
+        <item itemvalue="JUnit.ShelfTest.ShouldAddItemInShelfPartition" />
+        <item itemvalue="JUnit.All in tool-shop-manager" />
         <item itemvalue="JUnit.DeleteToolTest" />
         <item itemvalue="JUnit.DeleteToolTypeTest" />
-        <item itemvalue="JUnit.UpdateToolTypeTest" />
       </list>
     </recent_temporary>
   </component>

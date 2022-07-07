@@ -4,32 +4,34 @@ import java.util.*;
 
 public class Partition {
     private short code;
-    private List<UUID> itens;
+    private List<PartitionItem> items;
 
     public Partition(short code) {
         this.code = code;
-        this.itens = new ArrayList<UUID>();
+        this.items = new ArrayList<PartitionItem>();
     }
 
-    public void addItem(UUID item) {
-        this.itens.add(item);
+    public void addItem(UUID itemId) {
+        this.items.add(new PartitionItem(itemId));
     }
 
-    public void addManyItems(UUID[] items) {
-        this.itens.addAll(Arrays.stream(items).toList());
+    public void addManyItems(UUID[] itemsId) {
+        this.items.addAll(Arrays.stream(itemsId).map(PartitionItem::new).toList());
     }
 
-    public List<UUID> getItems() {
-        return this.itens;
+    public List<PartitionItem> getItems() {
+        return this.items;
     }
 
     public void removeItem(UUID itemId) {
-        Optional<UUID> item = this.itens.stream().filter(it -> it.equals(itemId)).findFirst();
+        Optional<PartitionItem> item = this.items.stream().filter(
+            currentItem -> currentItem.getItemId().equals(itemId)
+        ).findFirst();
 
         if(item.isEmpty()) {
             throw new IllegalArgumentException();
         }
 
-        this.itens.remove(item.get());
+        this.items.remove(item.get());
     }
 }

@@ -7,8 +7,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Shelf {
-    private String name;
     private final List<Partition> partitions;
+    private String name;
 
     private Shelf(String name, short partitionsQuantity) {
         this.name = name;
@@ -25,7 +25,7 @@ public class Shelf {
     }
 
     private static String validateName(String name) {
-        Pattern pattern = Pattern.compile( "^[a-zA-Z]{1,3}+$");
+        Pattern pattern = Pattern.compile("^[a-zA-Z]{1,3}+$");
         Matcher matcher = pattern.matcher(name);
 
         if (!matcher.find()) {
@@ -51,7 +51,7 @@ public class Shelf {
         this.partitions.get(partitionCode).addManyItems(itemsId);
     }
 
-    public List<UUID> getPartitionItems(short partitionCode) {
+    public List<PartitionItem> getPartitionItems(short partitionCode) {
         return this.partitions.get(partitionCode).getItems();
     }
 

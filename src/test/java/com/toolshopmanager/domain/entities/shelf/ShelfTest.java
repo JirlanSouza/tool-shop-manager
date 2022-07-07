@@ -64,7 +64,8 @@ class ShelfTest {
 
         shelf.addItemToPartition(partitionCode, itemId);
 
-        Assertions.assertEquals(itemId, shelf.getPartitionItems(partitionCode).get(0));
+        UUID addedItemId = shelf.getPartitionItems(partitionCode).get(0).getItemId();
+        Assertions.assertEquals(itemId, addedItemId);
     }
 
     @Test
@@ -81,7 +82,8 @@ class ShelfTest {
         shelf.addManyItemsToPartition(partitionCode, itemsId);
 
         for (int i = 0; i < itemsId.length; i++) {
-            Assertions.assertEquals(itemsId[i], shelf.getPartitionItems(partitionCode).get(i));
+            UUID itemId = shelf.getPartitionItems(partitionCode).get(i).getItemId();
+            Assertions.assertEquals(itemsId[i], itemId);
         }
     }
 
