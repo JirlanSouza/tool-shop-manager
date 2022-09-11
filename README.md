@@ -1,3 +1,9 @@
-# tool-shop-manager
+# Tool shop-manager
 
-A tool shop manager API.
+A application api to manager tools shop.
+
+Created with Java and using TDD with Junit to create unity tests.
+
+## License
+
+This project is under license [MIT](LICENCE)
